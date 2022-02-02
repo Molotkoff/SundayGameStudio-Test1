@@ -12,14 +12,8 @@ namespace Molotkoff.Test1App
 {
     public class ToMainApp : MonoBehaviour
     {
-        [Range(0.1f, 1f)]
-        private float alphaSpeed;
-        [SerializeField]
-        private Image dampingImage;
         [SerializeField]
         private Button playButton;
-
-        private WaitForFixedUpdate waitCached = new WaitForFixedUpdate();
 
         public void Start()
         {
@@ -29,22 +23,7 @@ namespace Molotkoff.Test1App
 
         public void Play()
         {
-            StartCoroutine(Damping());
-        }
-
-        private IEnumerator Damping()
-        {
-            for (var alpha = dampingImage.color.a; alpha <= 1; alpha += alphaSpeed)
-            {
-                var color = dampingImage.color;
-                color.a = alpha;
-
-                dampingImage.color = color;
-                yield return waitCached;
-            }
-
             SceneManager.LoadScene("App Image Window");
-            yield break;
         }
     }
 }

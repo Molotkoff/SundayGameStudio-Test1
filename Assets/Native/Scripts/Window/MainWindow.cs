@@ -9,15 +9,9 @@ namespace Molotkoff.Test1App
 {
     public class MainWindow : MonoBehaviour, IWindow
     {
-        public void Show()
-        {
+        public void Show() {}
 
-        }
-
-        public void Hide()
-        {
-
-        }
+        public void Hide() {}
 
         private void Update()
         {
